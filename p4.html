@@ -1,0 +1,62 @@
+<section class="pad" id="contacto">
+  <div class="wrap">
+    <div class="sep-titulo rv">
+      <div>
+        <span class="mono eyebrow">Contacto</span>
+        <h2>Dónde escucharle</h2>
+      </div>
+      <span class="mono">Para contratación, escríbenos por Instagram</span>
+    </div>
+
+    <div class="enlaces rv">
+      <a class="enlace" href="https://open.spotify.com/artist/7Dhtrm0gyXdmDvvc5zAh4w" target="_blank" rel="noopener"><span>Música</span><b>Spotify</b></a>
+      <a class="enlace" href="https://music.apple.com/es/artist/sosad-97/1466661259" target="_blank" rel="noopener"><span>Música</span><b>Apple Music</b></a>
+      <a class="enlace" href="https://www.deezer.com/artist/67481252" target="_blank" rel="noopener"><span>Música</span><b>Deezer</b></a>
+      <a class="enlace" href="https://www.youtube.com/channel/UCT6vvQgY9-sLoxODDKB-p6Q" target="_blank" rel="noopener"><span>Vídeo</span><b>YouTube</b></a>
+      <a class="enlace" href="https://www.instagram.com/sosad.97/" target="_blank" rel="noopener"><span>Redes</span><b>Instagram</b></a>
+    </div>
+
+    <div class="rv" style="margin-top:38px;display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn btn-rojo" href="https://ig.me/m/sosad.97" target="_blank" rel="noopener">Escribir por Instagram</a>
+      <a class="btn btn-linea" href="https://open.spotify.com/artist/7Dhtrm0gyXdmDvvc5zAh4w" target="_blank" rel="noopener">Escuchar su música</a>
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="wrap">
+    <div class="pie-in">
+      <div class="pie-marca">SOSAD<i>.97</i></div>
+      <div class="pie-links">
+        <a href="#artista">El artista</a>
+        <a href="#discografia">Discografía</a>
+        <a href="#videos">Vídeos</a>
+        <a href="#directo">En directo</a>
+        <a href="https://www.instagram.com/sosad.97/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="pie-abajo">
+      <span>© 2026 Sosad.97 · Madrid</span>
+      <span>Web de demostración · NEO Labs</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var cab = document.getElementById('cab');
+  var pinta = function(){ cab.classList.toggle('fijo', window.scrollY > 40) };
+  pinta(); window.addEventListener('scroll', pinta, {passive:true});
+
+  var b = document.getElementById('burger'), m = document.querySelector('.menu');
+  if (b) b.addEventListener('click', function(){ m.classList.toggle('abierto') });
+  if (m) m.addEventListener('click', function(e){ if (e.target.tagName === 'A') m.classList.remove('abierto') });
+
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('visto'); io.unobserve(en.target) } });
+  }, {threshold:.14});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el) });
+})();
+</script>
+</body>
+</html>
